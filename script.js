@@ -1,5 +1,5 @@
 // ==================== DEFAULT SETTINGS (valeur par défaut) ====================
-const APP_VERSION = "v1.1.7";
+const APP_VERSION = "v1.2";
 const DEFAULT_SETTINGS = {
     early: {
         legend: { SPD:14, HP:18, DEF:18, ATK:16, CRate:11, CDmg:14, ACC:18, RES:18 },
@@ -661,7 +661,7 @@ const allColumns = [
             const setClass = set.toLowerCase();
             return `
                 <div class="rune-set-container">
-                    <div class="rune-slot-bg" style="background-image: url('images/Rune-slot-${slot}-selected.png');"></div>
+                    <div class="rune-slot-bg" style="background-image: url('images/Rune-slot-${slot}.png');"></div>
                     <i class="rune-${setClass} rune-set-icon"></i>
                 </div>
                 ${set}

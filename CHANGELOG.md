@@ -1,5 +1,12 @@
 # Changelog - SW Rune Optimizer
 
+## [v1.2] - 2026-05-17
+### Ajustement taille et centrage des ic�nes de set
+
+## [v1.2] - 2026-05-17
+### Correction
+- Réduction de la taille de l'icône du set et recentrage sur l'image du slot.
+
 ## [v1.1.7] - 2026-05-17
 ### Affichage combine slot+set avec images de dimensions variables
 
