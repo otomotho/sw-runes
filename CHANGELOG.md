@@ -1,5 +1,8 @@
 # Changelog - SW Rune Optimizer
 
+## [v1.3.0] - 2026-05-17
+### Ajout des icônes de sets via police personnalisée
+
 ## [v1.1.4] - 2026-05-17
 ### Ajout colonne Origine, crédit, version en top bar pas footer, réduction espacements
 

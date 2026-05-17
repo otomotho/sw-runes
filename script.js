@@ -652,8 +652,7 @@ function getFinal(rune, highRoll, duoRoll, classicDps, slowDps, bomber, tankSupp
 // ==================== RENDU TABLEAU DYNAMIQUE ====================
 const allColumns = [
     { id: 'slot', label: 'Slot', getValue: (r) => r.slot || '?' },
-    { id: 'set', label: 'Set', getValue: (r) => `${getSetIcon(r.set)} ${r.set || '?'}` },
-    { id: 'rarity', label: 'Rareté', getValue: (r) => getRarityText(r) },
+    { id: 'set', label: 'Set', getValue: (r) => `<i class="rune-${(r.set || '').toLowerCase()}"></i> ${r.set || '?'}` },
     { id: 'level', label: 'Niv.', getValue: (r) => r.level || 0 },
     { id: 'mainType', label: 'Principal', getValue: (r) => r.m_t || '?' },
     { id: 'mainVal', label: 'Valeur', getValue: (r) => r.m_v || 0 },

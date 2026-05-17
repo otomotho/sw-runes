@@ -323,3 +323,51 @@ th, td {
     border-radius: 12px;
     background: #0f1a24;
 }
+/* ==================== ICÔNES DES SETS (police sw-runes-font) ==================== */
+@font-face {
+    font-family: "sw-runes-font";
+    src: url("fonts/sw-runes-font.eot");
+    src: url("fonts/sw-runes-font.eot?#iefix") format("embedded-opentype"),
+         url("fonts/sw-runes-font.woff") format("woff"),
+         url("fonts/sw-runes-font.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+
+[data-icon]:before,
+[class^="rune-"]:before,
+[class*=" rune-"]:before {
+    font-family: "sw-runes-font" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Mappings des sets (basés sur swrunebuilder) */
+.rune-energy:before { content: "\75"; }
+.rune-fatal:before { content: "\74"; }
+.rune-blade:before { content: "\73"; }
+.rune-swift:before { content: "\72"; }
+.rune-focus:before { content: "\71"; }
+.rune-guard:before { content: "\70"; }
+.rune-endure:before { content: "\6f"; }
+.rune-shield:before { content: "\6e"; }
+.rune-will:before { content: "\6d"; }
+.rune-nemesis:before { content: "\6c"; }
+.rune-revenge:before { content: "\6b"; }
+.rune-destroy:before { content: "\6a"; }
+.rune-violent:before { content: "\69"; }
+.rune-rage:before { content: "\68"; }
+.rune-despair:before { content: "\67"; }
+.rune-vampire:before { content: "\66"; }
+.rune-fight:before { content: "\65"; }
+.rune-determination:before { content: "\64"; }
+.rune-enhance:before { content: "\63"; }
+.rune-accuracy:before { content: "\62"; }
+.rune-tolerance:before { content: "\61"; }
+/* Ajoute d'autres sets si nécessaire */
