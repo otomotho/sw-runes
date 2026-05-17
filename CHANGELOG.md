@@ -4,6 +4,9 @@
 ### Ajustement taille et centrage des icônes de set
 
 ## [v1.2] - 2026-05-17
+### Ajustement taille et centrage des icônes de set
+
+## [v1.2] - 2026-05-17
 ### Correction
 - RÃ©duction de la taille de l'icÃ´ne du set et recentrage sur l'image du slot.
 
