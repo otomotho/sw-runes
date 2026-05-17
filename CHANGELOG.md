@@ -1,5 +1,8 @@
 # Changelog - SW Rune Optimizer
 
+## [v1.1.4] - 2026-05-17
+### Ajout colonne Origine, crédit, version en top bar pas footer, réduction espacements
+
 ## [v1.1.3] - 2026-05-17
 ### Ajout colonne Origine, crédit, version, réduction espacements
 
