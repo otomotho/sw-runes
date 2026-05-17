@@ -1,5 +1,15 @@
 # Changelog - SW Rune Optimizer
 
+## [v1.1.3] - 2026-05-17
+### Ajout colonne Origine, crédit, version, réduction espacements
+
+## [v1.1.3] - 2026-05-17
+### Ajout
+- Colonne "Origine" affichant l'emplacement de la rune (Inventory / Talisman).
+- Footer avec crÃ©dit (Made by otomotho) et numÃ©ro de version.
+
+### Modification
+- RÃ©duction des espacements dans le tableau pour un affichage plus compact.
 
 ## [v1.1.0] - 2026-05-18
 ### Changement

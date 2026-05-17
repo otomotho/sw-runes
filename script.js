@@ -1,4 +1,5 @@
 // ==================== DEFAULT SETTINGS (valeur par défaut) ====================
+const APP_VERSION = "v1.2.0";
 const DEFAULT_SETTINGS = {
     early: {
         legend: { SPD:14, HP:18, DEF:18, ATK:16, CRate:11, CDmg:14, ACC:18, RES:18 },
@@ -656,6 +657,7 @@ const allColumns = [
     { id: 'level', label: 'Niv.', getValue: (r) => r.level || 0 },
     { id: 'mainType', label: 'Principal', getValue: (r) => r.m_t || '?' },
     { id: 'mainVal', label: 'Valeur', getValue: (r) => r.m_v || 0 },
+    { id: 'origin', label: 'Origine', getValue: (r) => r.originName || r.monster_n || '?' },
     { id: 'innate', label: 'Innate', getValue: (r) => getInnateText(r) },
     { id: 'substats', label: 'Substats', getValue: (r) => getSubstatsText(r) },
     { id: 'efficiency', label: 'Efficacité %', getValue: (r) => `${parseFloat(r.efficiency).toFixed(1)}%` },
@@ -963,7 +965,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initGameLevelListeners();
     initSettingsTabs();
     initDecisionFilters();
-    
+    document.getElementById('appVersion').innerText = APP_VERSION;
     const editBtn = document.getElementById('editSettingsBtn');
     if (editBtn) editBtn.onclick = openModal;
     const closeBtn = document.querySelector('#settingsModal .close');
@@ -1040,6 +1042,6 @@ function updateSetFilter() {
 
 function getSetIcon(setName) {
     if (!setName) return '';
-    const fileName = setName + '_Rune_Icon.webp';   // conserve la casse d'origine
+    const fileName = setName.toLowerCase() + '_rune_icon.webp';
     return `<img class="set-icon" src="icons/${fileName}" alt="${setName}" style="width:24px; height:24px; margin-right:6px; vertical-align:middle;">`;
 }

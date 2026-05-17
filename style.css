@@ -293,3 +293,16 @@ tr:hover { background: #1e2e3c; }
 .close:hover {
     color: white;
 }
+/* Réduction des espacements */
+th, td {
+    padding: 6px 4px;
+}
+.app-footer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px;
+    font-size: 0.8rem;
+    color: #bbccdd;
+    border-top: 1px solid #2a3a44;
+}
