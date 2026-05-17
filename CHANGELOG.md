@@ -1,16 +1,24 @@
 # Changelog - SW Rune Optimizer
 
-## [v1.3.0] - 2026-05-17
-### Ajout des icônes de sets via police personnalisée
+## [v1.1.6] - 2026-05-17
+### Correction du bouton de modification des seuils et rajout des fonts de runes intangible et seal
+
+## [v1.1.6] - 2026-05-18
+### Correction
+- RÃ©paration du bouton "Modifier les seuils" (rÃ©intÃ©gration des fonctions de gestion du modal).
+- Aucune autre modification fonctionnelle.
+
+## [v1.1.5] - 2026-05-17
+### Ajout des icones de sets via police personnalisee
 
 ## [v1.1.4] - 2026-05-17
-### Ajout colonne Origine, crédit, version en top bar pas footer, réduction espacements
+### Ajout colonne Origine, credit, version en top bar pas footer, reduction espacements
 
 ## [v1.1.3] - 2026-05-17
-### Ajout colonne Origine, crédit, version, réduction espacements
+### Ajout colonne Origine, credit, version, reduction espacements
 
 ## [v1.1.3] - 2026-05-17
-### Ajout colonne Origine, crédit, version, réduction espacements
+### Ajout colonne Origine, credit, version, reduction espacements
 
 ## [v1.1.3] - 2026-05-17
 ### Ajout

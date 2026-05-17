@@ -1,5 +1,5 @@
 // ==================== DEFAULT SETTINGS (valeur par défaut) ====================
-const APP_VERSION = "v1.1.4";
+const APP_VERSION = "v1.1.6";
 const DEFAULT_SETTINGS = {
     early: {
         legend: { SPD:14, HP:18, DEF:18, ATK:16, CRate:11, CDmg:14, ACC:18, RES:18 },
