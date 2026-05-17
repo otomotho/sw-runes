@@ -16,11 +16,22 @@ h1 {
     font-size: 1.8rem;
     border-left: 5px solid #ffaa44;
     padding-left: 15px;
+    margin-top: 0;
+}
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    background: #1e2a3a;
+    padding: 8px 15px;
+    border-radius: 30px;
+    margin-bottom: 20px;
+    font-size: 0.8rem;
+    color: #ffcc88;
 }
 .upload-area {
     background: #1e2a3a;
-    padding: 15px;
-    border-radius: 12px;
+    padding: 15px 20px;
+    border-radius: 16px;
     margin: 20px 0;
     display: flex;
     gap: 15px;
@@ -30,14 +41,22 @@ h1 {
 .btn {
     background: #2c3e4e;
     color: white;
-    padding: 10px 20px;
-    border-radius: 8px;
+    padding: 8px 18px;
+    border-radius: 30px;
     cursor: pointer;
     border: none;
     font-weight: bold;
+    transition: background 0.2s;
 }
 .btn:hover { background: #3e5a6c; }
-input[type="file"] { display: none; }
+.btn-settings {
+    background: #5bc0de;
+    color: #1e2a3a;
+}
+.btn-settings:hover { background: #7fcbe4; }
+input[type="file"] {
+    display: none !important;
+}
 .controls {
     display: flex;
     gap: 20px;
@@ -50,21 +69,42 @@ input[type="file"] { display: none; }
     gap: 15px;
     align-items: center;
     background: #1e2a3a;
-    padding: 5px 15px;
-    border-radius: 20px;
-}
-.game-level label {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    cursor: pointer;
+    padding: 6px 18px;
+    border-radius: 30px;
 }
 .advanced-toggle {
     margin-left: auto;
     background: #1e2a3a;
-    padding: 5px 15px;
-    border-radius: 20px;
+    padding: 6px 18px;
+    border-radius: 30px;
 }
+.decision-filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    background: #1e2a3a;
+    padding: 8px 18px;
+    border-radius: 30px;
+    margin: 10px 0;
+}
+.decision-filters label {
+    display: inline-flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.8rem;
+}
+.btn-small {
+    background: #2c3e4e;
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    border: none;
+    font-size: 0.7rem;
+    transition: background 0.2s;
+}
+.btn-small:hover { background: #3e5a6c; }
 .stats {
     margin: 15px 0;
     font-size: 0.9rem;
@@ -72,7 +112,7 @@ input[type="file"] { display: none; }
 }
 .counters {
     display: flex;
-    gap: 15px;
+    gap: 20px;
     flex-wrap: wrap;
     margin-top: 8px;
     font-size: 0.9rem;
@@ -85,13 +125,14 @@ input[type="file"] { display: none; }
 .counter-finish { color: #4caf50; }
 .table-wrapper {
     overflow-x: auto;
-    border-radius: 12px;
+    border-radius: 16px;
     background: #0f1a24;
+    margin-top: 10px;
 }
 table {
     width: 100%;
     border-collapse: collapse;
-    font-size: 0.8rem;
+    font-size: 0.75rem;
 }
 th, td {
     text-align: left;
@@ -99,289 +140,35 @@ th, td {
     border-bottom: 1px solid #2a3a44;
     white-space: nowrap;
 }
+th:first-child, td:first-child {
+    padding-left: 12px;
+}
 th {
     background: #16232e;
     color: #ffcc88;
     position: sticky;
     top: 0;
     cursor: pointer;
+    font-weight: 600;
 }
 tr:hover { background: #1e2e3c; }
-.high-score {
-    background-color: #2a5f3a;
-}
-/* Styles pour les actions */
-.btn-sell { background-color: #a94442; color: white; padding: 2px 8px; border-radius: 12px; display: inline-block; }
-.btn-keep { background-color: #3c763d; color: white; padding: 2px 8px; border-radius: 12px; display: inline-block; }
-.btn-gem { background-color: #f0ad4e; color: black; padding: 2px 8px; border-radius: 12px; display: inline-block; }
-.btn-reapp { background-color: #5bc0de; color: black; padding: 2px 8px; border-radius: 12px; display: inline-block; }
-.btn-finish { background-color: #5cb85c; color: white; padding: 2px 8px; border-radius: 12px; display: inline-block; }
-.btn-upgrade { background-color: #337ab7; color: white; padding: 2px 8px; border-radius: 12px; display: inline-block; }
-.sort-arrow {
-    margin-left: 4px;
-}
-
-/* ==================== DECISION FILTERS ==================== */
-.decision-filters {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 10px;
-    background: #1e2a3a;
-    padding: 5px 15px;
-    border-radius: 20px;
-    margin-top: 10px;
-}
-.decision-filters label {
-    display: inline-flex;
-    align-items: center;
-    gap: 4px;
-    font-size: 0.8rem;
-}
-.btn-small {
-    background: #2c3e4e;
-    color: white;
-    padding: 2px 10px;
-    border-radius: 12px;
-    cursor: pointer;
-    border: none;
-    font-size: 0.7rem;
-}
-.btn-small:hover {
-    background: #3e5a6c;
-}
-
-/* ==================== ICÔNES DES SETS ==================== */
-.set-icon {
-    width: 24px;
-    height: 24px;
-    vertical-align: middle;
-    margin-right: 6px;
-    border-radius: 4px;
-}
-
-/* ==================== MODAL COMPACT ==================== */
-.modal {
-    display: none;
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.7);
-}
-.modal-content {
-    background-color: #1e2a3a;
-    margin: 5% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 90%;
-    max-width: 1000px;
-    border-radius: 12px;
-    color: #e0e0e0;
-    max-height: 85vh;
-    display: flex;
-    flex-direction: column;
-}
-.modal-buttons-fixed {
-    display: flex;
-    gap: 10px;
-    justify-content: flex-end;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #2a3a44;
-    flex-shrink: 0;
-}
-.modal-tabs {
-    display: flex;
-    gap: 5px;
-    margin-bottom: 15px;
-    flex-shrink: 0;
-}
-.tab-btn {
-    background: #0f1a24;
-    border: none;
-    padding: 8px 16px;
-    border-radius: 20px;
-    color: #bbccdd;
-    cursor: pointer;
-    font-weight: bold;
-}
-.tab-btn.active {
-    background: #ffaa44;
-    color: #1e2a3a;
-}
-.settings-form-container {
-    overflow-y: auto;
-    flex-grow: 1;
-    padding-right: 5px;
-}
-.settings-section {
-    background: #0f1a24;
-    padding: 12px;
-    border-radius: 8px;
-    margin-bottom: 15px;
-}
-.settings-section h3 {
-    margin: 0 0 10px 0;
-    color: #ffcc88;
-    font-size: 1.1rem;
-}
-.settings-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 8px;
-}
-.settings-grid label {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 0.8rem;
-    background: #16232e;
-    padding: 4px 8px;
-    border-radius: 4px;
-}
-.settings-grid input {
-    width: 60px;
-    padding: 2px 4px;
-    text-align: center;
-    background: #1e2a3a;
-    border: 1px solid #2a3a44;
-    color: white;
-    border-radius: 4px;
-}
-.duo-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 10px;
-}
-.duo-category {
-    background: #16232e;
-    padding: 8px;
-    border-radius: 6px;
-}
-.duo-category h4 {
-    margin: 0 0 8px 0;
-    color: #ffaa88;
-}
-.duo-category label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 0.75rem;
-    margin-bottom: 4px;
-}
-.duo-category input {
-    width: 55px;
-    text-align: center;
-    background: #1e2a3a;
-    border: 1px solid #2a3a44;
-    color: white;
-    border-radius: 4px;
-}
-.close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-    position: absolute;
-    top: 15px;
-    right: 20px;
-}
-.close:hover {
-    color: white;
-}
-/* Réduction des espacements */
-/* Réduction maximale des espacements */
-th, td {
-    padding: 4px 2px;   /* très serré */
-    font-size: 0.75rem; /* légèrement plus petit */
-}
-
-/* Top-bar */
-.top-bar {
-    display: flex;
-    justify-content: space-between;
-    background: #1e2a3a;
-    padding: 5px 15px;
-    border-radius: 20px;
-    margin-bottom: 15px;
-    font-size: 0.8rem;
-    color: #ffcc88;
-}
-
-/* Pour un tableau plus compact, on peut aussi fixer la largeur des colonnes */
-#runeTable {
-    table-layout: auto;
-    width: 100%;
-}
-/* Supprimer les marges internes du wrapper si nécessaire */
-.table-wrapper {
-    overflow-x: auto;
-    border-radius: 12px;
-    background: #0f1a24;
-}
-/* ==================== ICÔNES DES SETS (police sw-runes-font) ==================== */
-@font-face {
-    font-family: "sw-runes-font";
-    src: url("fonts/sw-runes-font.eot");
-    src: url("fonts/sw-runes-font.eot?#iefix") format("embedded-opentype"),
-         url("fonts/sw-runes-font.woff") format("woff"),
-         url("fonts/sw-runes-font.ttf") format("truetype");
-    font-weight: normal;
-    font-style: normal;
-}
-
-[data-icon]:before,
-[class^="rune-"]:before,
-[class*=" rune-"]:before {
-    font-family: "sw-runes-font" !important;
-    font-style: normal !important;
-    font-weight: normal !important;
-    font-variant: normal !important;
-    text-transform: none !important;
-    speak: none;
-    line-height: 1;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Mappings des sets (basés sur swrunebuilder) */
-.rune-energy:before { content: "\75"; }
-.rune-fatal:before { content: "\74"; }
-.rune-blade:before { content: "\73"; }
-.rune-swift:before { content: "\72"; }
-.rune-focus:before { content: "\71"; }
-.rune-guard:before { content: "\70"; }
-.rune-endure:before { content: "\6f"; }
-.rune-shield:before { content: "\6e"; }
-.rune-will:before { content: "\6d"; }
-.rune-nemesis:before { content: "\6c"; }
-.rune-revenge:before { content: "\6b"; }
-.rune-destroy:before { content: "\6a"; }
-.rune-violent:before { content: "\69"; }
-.rune-rage:before { content: "\68"; }
-.rune-despair:before { content: "\67"; }
-.rune-vampire:before { content: "\66"; }
-.rune-fight:before { content: "\65"; }
-.rune-determination:before { content: "\64"; }
-.rune-enhance:before { content: "\63"; }
-.rune-accuracy:before { content: "\62"; }
-.rune-tolerance:before { content: "\61"; }
-.rune-seal:before { content: "\76"; }
-.rune-intangible:before { content: "\76"; }
-/* Ajoute d'autres sets si nécessaire */
-
-/* Conteneur pour l’icône du set superposée à l’image du slot */
+td:nth-child(1), th:nth-child(1) { width: 50px; }
+td:nth-child(2), th:nth-child(2) { max-width: 90px; overflow: hidden; text-overflow: ellipsis; }
+td:nth-child(7), th:nth-child(7) { max-width: 80px; overflow: hidden; text-overflow: ellipsis; }
+.btn-sell { background-color: #a94442; color: white; padding: 2px 8px; border-radius: 20px; display: inline-block; }
+.btn-keep { background-color: #3c763d; color: white; padding: 2px 8px; border-radius: 20px; display: inline-block; }
+.btn-gem { background-color: #f0ad4e; color: black; padding: 2px 8px; border-radius: 20px; display: inline-block; }
+.btn-reapp { background-color: #5bc0de; color: black; padding: 2px 8px; border-radius: 20px; display: inline-block; }
+.btn-finish { background-color: #5cb85c; color: white; padding: 2px 8px; border-radius: 20px; display: inline-block; }
+.btn-upgrade { background-color: #337ab7; color: white; padding: 2px 8px; border-radius: 20px; display: inline-block; }
+.sort-arrow { margin-left: 4px; }
 .rune-set-container {
     position: relative;
-    display: inline-block;
-    width: 40px;
-    height: 40px;
+    display: inline-flex;
+    width: 38px;
+    height: 38px;
+    margin-right: 6px;
     vertical-align: middle;
-    margin-right: 6px; /* espace avec le nom du set */
 }
 .rune-slot-bg {
     position: absolute;
@@ -398,14 +185,203 @@ th, td {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 18px;      /* Taille réduite (auparavant 20px) */
+    font-size: 18px;
     color: white;
-    text-shadow: 0 0 2px rgba(0,0,0,0.8);
+    text-shadow: 0 0 2px black;
     line-height: 1;
-    /* Centrage supplémentaire */
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
     height: 100%;
 }
+.rune-set-icon:before { display: block; }
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.75);
+    backdrop-filter: blur(3px);
+}
+.modal-content {
+    position: relative;  /* ← ajout essentiel */
+    background-color: #1e2a3a;
+    margin: 5% auto;
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    max-width: 900px;
+    color: #e0e0e0;
+    max-height: 85vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.5);
+}
+.modal-buttons-fixed {
+    display: flex;
+    gap: 12px;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #2a3a44;
+    flex-shrink: 0;
+    /* Ajout d’un petit décalage vers la droite si besoin */
+    padding-right: 10px;
+    /* ou bien un margin-top pour les éloigner du haut */
+    margin-top: 5px;
+}
+.modal-buttons-fixed .btn:last-child {
+    margin-right: 10px;
+}
+.modal-tabs {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+    flex-shrink: 0;
+}
+.tab-btn {
+    background: #0f1a24;
+    border: none;
+    padding: 6px 16px;
+    border-radius: 30px;
+    color: #bbccdd;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.2s;
+}
+.tab-btn.active {
+    background: #ffaa44;
+    color: #1e2a3a;
+}
+.modal-level-selector {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 20px;
+    background: #0f1a24;
+    padding: 8px 12px;
+    border-radius: 40px;
+}
+.modal-level-selector span {
+    font-size: 0.8rem;
+    color: #bbccdd;
+}
+.modal-level-btn {
+    background: #2c3e4e;
+    border: none;
+    padding: 4px 12px;
+    border-radius: 30px;
+    color: white;
+    cursor: pointer;
+    font-size: 0.7rem;
+    transition: all 0.2s;
+}
+.modal-level-btn.active {
+    background: #ffaa44;
+    color: #1e2a3a;
+}
+.modal-level-btn:hover {
+    background: #3e5a6c;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 20px;
+    padding-top: 12px;
+    border-top: 1px solid #2a3a44;
+}
+.settings-form-container {
+    overflow-y: auto;
+    flex-grow: 1;
+    padding-right: 5px;
+}
+.settings-rarity h3, .duo-type h3 {
+    margin: 0 0 10px 0;
+    color: #ffcc88;
+}
+.settings-grid, .duo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(90px, 1fr));
+    gap: 8px;
+}
+.settings-grid label, .duo-grid label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.75rem;
+    background: #1e2a3a;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+.settings-grid input, .duo-grid input {
+    width: 55px;
+    padding: 2px;
+    text-align: center;
+    background: #2c3e4e;
+    border: 1px solid #3e5a6c;
+    border-radius: 4px;
+    color: white;
+}
+.close {
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #aaa;
+    line-height: 1;
+}
+.close:hover { color: white; }
+@font-face {
+    font-family: "sw-runes-font";
+    src: url("fonts/sw-runes-font.eot");
+    src: url("fonts/sw-runes-font.eot?#iefix") format("embedded-opentype"),
+         url("fonts/sw-runes-font.woff") format("woff"),
+         url("fonts/sw-runes-font.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+[data-icon]:before,
+[class^="rune-"]:before,
+[class*=" rune-"]:before {
+    font-family: "sw-runes-font" !important;
+    font-style: normal !important;
+    font-weight: normal !important;
+    font-variant: normal !important;
+    text-transform: none !important;
+    speak: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.rune-energy:before { content: "\75"; }
+.rune-fatal:before { content: "\74"; }
+.rune-blade:before { content: "\6b"; }
+.rune-swift:before { content: "\64"; }
+.rune-focus:before { content: "\6a"; }
+.rune-guard:before { content: "\69"; }
+.rune-endure:before { content: "\6e"; }
+.rune-shield:before { content: "\63"; }
+.rune-will:before { content: "\67"; }
+.rune-nemesis:before { content: "\68"; }
+.rune-revenge:before { content: "\62"; }
+.rune-destroy:before { content: "\6d"; }
+.rune-violent:before { content: "\66"; }
+.rune-rage:before { content: "\61"; }
+.rune-despair:before { content: "\6c"; }
+.rune-vampire:before { content: "\65"; }
+.rune-fight:before { content: "\73"; }
+.rune-determination:before { content: "\71"; }
+.rune-enhance:before { content: "\72"; }
+.rune-accuracy:before { content: "\6f"; }
+.rune-tolerance:before { content: "\70"; }
+.rune-seal:before { content: "\76"; }
+.rune-intangible:before { content: "\77"; }

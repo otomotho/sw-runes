@@ -64,11 +64,42 @@
 
         <div class="table-wrapper">
             <table id="runeTable">
-                <thead><tr><th>Slot</th><th>Set</th><th>Rareté</th><th>Niv.</th><th>Principal</th><th>Valeur</th><th>Origine</th><th>Innate</th><th>Substats</th><th>Efficacité %</th><th>Final</th></tr></thead>
+                <thead>
+                    <tr>
+                        <th>Slot</th><th>Set</th><th>Rareté</th><th>Niv.</th>
+                        <th>Principal</th><th>Valeur</th><th>Origine</th>
+                        <th>Innate</th><th>Substats</th><th>Efficacité %</th><th>Final</th>
+                    </tr>
+                </thead>
                 <tbody id="runeTableBody"></tbody>
             </table>
         </div>
     </div>
+
+    <!-- Modal pour modifier les seuils -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button id="resetSettingsBtn" class="btn">Réinitialiser</button>
+                <span class="close">&times;</span>
+            </div>
+            <div class="modal-tabs">
+                <button id="tabHighRollBtn" class="tab-btn active">High Roll</button>
+                <button id="tabDuoRollBtn" class="tab-btn">Duo Roll</button>
+            </div>
+            <div class="modal-level-selector">
+                <span>📊 Niveau :</span>
+                <button class="modal-level-btn" data-level="early">Early</button>
+                <button class="modal-level-btn" data-level="mid">Mid</button>
+                <button class="modal-level-btn" data-level="late">Late</button>
+            </div>
+            <div id="settingsForm" class="settings-form-container"></div>
+            <div class="modal-footer">
+                <button id="saveSettingsBtn" class="btn">Sauvegarder</button>
+            </div>
+        </div>
+    </div>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
     <script src="script.js"></script>
 </body>

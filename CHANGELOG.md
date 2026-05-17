@@ -1,21 +1,55 @@
 # Changelog - SW Rune Optimizer
 
-## [v1.2] - 2026-05-17
-### Ajustement taille et centrage des ic�nes de set
+## [v1.3.0] - 2026-05-18
+### Modal des seuils + Affichage des runes + Colonne Origine + Corrections : double affichage du bouton d�import / bouton Modifier les seuils qui ne fonctionnait plus / mappings de police pour les sets / Ajustement du padding de la premi�re colonne du tableau pour une meilleure lisibilit�
+
+
+## [v1.3.0] - 2026-05-18
+
+### ✨ Ajouts
+- **Modal des seuils** entièrement revu :
+  - Onglets indépendants pour **High Roll** et **Duo Roll** (les seuils Duo Roll sont maintenant distincts et correctement chargés).
+  - Sélecteur de niveau (**Early / Mid / Late**) dans le modal, qui recharge dynamiquement les seuils du niveau choisi.
+  - Boutons repositionnés : **Réinitialiser** en haut à gauche, **Sauvegarder** en bas à droite, **Fermeture** (croix) en haut à droite.
+- **Affichage des runes** :
+  - Icônes des sets via une police personnalisée (`sw-runes-font`) avec superposition sur l’image du slot.
+  - Images des slots (`Rune-slot-1.png` à `Rune-slot-6.png`) intégrées dans le conteneur Docker.
+  - Réduction de la largeur des colonnes **Set** et **Origine** (avec `text-overflow: ellipsis`) pour un tableau plus compact.
+- **Colonne "Origine"** : affiche l’emplacement de la rune (`Inventory` / `Talisman`) issu du CSV.
+
+### 🐛 Corrections
+- Correction du double affichage du bouton d’import (masquage de l’input file).
+- Correction du bouton "Modifier les seuils" qui ne fonctionnait plus (réintégration du modal HTML).
+- Correction des mappings de police pour les sets **Seal** (`\76`) et **Intangible** (`\77`).
+- Ajustement du padding de la première colonne du tableau pour une meilleure lisibilité.
+
+### ⚙️ Techniques
+- Refactorisation des fonctions `buildHighRollForm` et `buildDuoRollForm` pour gérer un niveau à la fois.
+- Sauvegarde des seuils dans `localStorage` (persistance entre les sessions).
+- Versionnement explicite via `APP_VERSION` dans le footer.
+
+### 📦 Fichiers impactés
+- `index.html` : modal restructuré.
+- `style.css` : nombreuses améliorations (modal, tableau, polices).
+- `script.js` : nouvelles fonctions de formulaire, correction des onglets, gestion du niveau dans le modal.
+
+## [v1.2.1] - 2026-05-17
+### Correction des assignations de fonts + deplacement de la colonnes slot 
+- 
 
 ## [v1.2] - 2026-05-17
-### Ajustement taille et centrage des ic�nes de set
+### Ajustement taille et centrage des icones de set
 
 ## [v1.2] - 2026-05-17
 ### Correction
-- Réduction de la taille de l'icône du set et recentrage sur l'image du slot.
+- Reduction de la taille de l'icône du set et recentrage sur l'image du slot.
 
 ## [v1.1.7] - 2026-05-17
 ### Affichage combine slot+set avec images de dimensions variables
 
 ## [v1.1.7] - 2026-05-17
 ### Amélioration
-- Affichage combiné : image du slot en fond et icône du set par-dessus (comme sur swrunebuilder.com).
+- Affichage combine : image du slot en fond et icone du set par-dessus 
 
 ## [v1.1.6] - 2026-05-17
 ### Correction du bouton de modification des seuils et rajout des fonts de runes intangible et seal
