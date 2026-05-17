@@ -1,5 +1,10 @@
 # Changelog - SW Rune Optimizer
 
+
+## [v1.1.0] - 2026-05-18
+### Changement
+- Renommage définitif de tous les fichiers d'icônes en minuscules pour éviter les problèmes de casse.
+
 ## [v1.0.5] - 2026-05-18
 ### Correction
 - Réparation des icônes des sets (problème de casse : utilisation du nom exact du set, sans `toLowerCase()`).
