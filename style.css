@@ -294,15 +294,32 @@ tr:hover { background: #1e2e3c; }
     color: white;
 }
 /* Réduction des espacements */
+/* Réduction maximale des espacements */
 th, td {
-    padding: 6px 4px;
+    padding: 4px 2px;   /* très serré */
+    font-size: 0.75rem; /* légèrement plus petit */
 }
-.app-footer {
+
+/* Top-bar */
+.top-bar {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
-    padding: 10px;
+    background: #1e2a3a;
+    padding: 5px 15px;
+    border-radius: 20px;
+    margin-bottom: 15px;
     font-size: 0.8rem;
-    color: #bbccdd;
-    border-top: 1px solid #2a3a44;
+    color: #ffcc88;
+}
+
+/* Pour un tableau plus compact, on peut aussi fixer la largeur des colonnes */
+#runeTable {
+    table-layout: auto;
+    width: 100%;
+}
+/* Supprimer les marges internes du wrapper si nécessaire */
+.table-wrapper {
+    overflow-x: auto;
+    border-radius: 12px;
+    background: #0f1a24;
 }
