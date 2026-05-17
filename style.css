@@ -373,3 +373,29 @@ th, td {
 .rune-seal:before { content: "\76"; }
 .rune-intangible:before { content: "\76"; }
 /* Ajoute d'autres sets si nécessaire */
+
+/* Conteneur pour l’icône du set superposée à l’image du slot */
+.rune-set-container {
+    position: relative;
+    display: inline-block;
+    width: 40px;          /* taille d’affichage uniforme */
+    height: 40px;
+    vertical-align: middle;
+}
+.rune-slot-bg {
+    width: 100%;
+    height: 100%;
+    background-size: contain;   /* l’image entière tient dans le cadre */
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.rune-set-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;      /* à ajuster selon votre police */
+    color: white;
+    text-shadow: 0 0 2px black;
+    pointer-events: none;
+}

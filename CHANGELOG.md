@@ -1,12 +1,19 @@
 # Changelog - SW Rune Optimizer
 
-## [v1.1.6] - 2026-05-17
-### Correction du bouton de modification des seuils et rajout des fonts de runes intangible et seal
+## [v1.1.7] - 2026-05-17
+### Affichage combine slot+set avec images de dimensions variables
+
+## [v1.1.7] - 2026-05-17
+### Amélioration
+- Affichage combiné : image du slot en fond et icône du set par-dessus (comme sur swrunebuilder.com).
 
 ## [v1.1.6] - 2026-05-17
 ### Correction du bouton de modification des seuils et rajout des fonts de runes intangible et seal
 
-## [v1.1.6] - 2026-05-18
+## [v1.1.6] - 2026-05-17
+### Correction du bouton de modification des seuils et rajout des fonts de runes intangible et seal
+
+## [v1.1.6] - 2026-05-17
 ### Correction
 - Réparation du bouton "Modifier les seuils" (réintégration des fonctions de gestion du modal).
 - Aucune autre modification fonctionnelle.

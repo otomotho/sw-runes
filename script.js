@@ -1,5 +1,5 @@
 // ==================== DEFAULT SETTINGS (valeur par défaut) ====================
-const APP_VERSION = "v1.1.6";
+const APP_VERSION = "v1.1.7";
 const DEFAULT_SETTINGS = {
     early: {
         legend: { SPD:14, HP:18, DEF:18, ATK:16, CRate:11, CDmg:14, ACC:18, RES:18 },
@@ -652,7 +652,22 @@ function getFinal(rune, highRoll, duoRoll, classicDps, slowDps, bomber, tankSupp
 // ==================== RENDU TABLEAU DYNAMIQUE ====================
 const allColumns = [
     { id: 'slot', label: 'Slot', getValue: (r) => r.slot || '?' },
-    { id: 'set', label: 'Set', getValue: (r) => `<i class="rune-${(r.set || '').toLowerCase()}"></i> ${r.set || '?'}` },
+    {
+        id: 'set',
+        label: 'Set',
+        getValue: (r) => {
+            const slot = r.slot || '?';
+            const set = r.set || '';
+            const setClass = set.toLowerCase();
+            return `
+                <div class="rune-set-container">
+                    <div class="rune-slot-bg" style="background-image: url('images/Rune-slot-${slot}-selected.png');"></div>
+                    <i class="rune-${setClass} rune-set-icon"></i>
+                </div>
+                ${set}
+            `;
+        }
+    },
     { id: 'level', label: 'Niv.', getValue: (r) => r.level || 0 },
     { id: 'mainType', label: 'Principal', getValue: (r) => r.m_t || '?' },
     { id: 'mainVal', label: 'Valeur', getValue: (r) => r.m_v || 0 },
