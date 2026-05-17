@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SW Rune Optimizer - Excel complet</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>⚔️ SW Rune Optimizer (version Excel complet)</h1>
+        <div class="upload-area">
+            <label for="fileInput" class="btn">📂 Importer runes-data.csv</label>
+            <input type="file" id="fileInput" accept=".csv">
+            <button id="editSettingsBtn" class="btn btn-settings">⚙️ Modifier les seuils</button>
+        </div>
+
+        <div class="controls">
+            <div>
+                <label>🔍 Filtrer par set :</label>
+                <select id="setFilter">
+                    <option value="all">Tous</option>
+                </select>
+            </div>
+            <div class="game-level">
+                <span>🎮 Niveau de jeu :</span>
+                <label><input type="radio" name="gameLevel" value="early" checked> Early</label>
+                <label><input type="radio" name="gameLevel" value="mid"> Mid</label>
+                <label><input type="radio" name="gameLevel" value="late"> Late</label>
+            </div>
+            <div class="advanced-toggle">
+                <label>
+                    <input type="checkbox" id="advancedModeCheckbox"> Mode avancé (afficher toutes les colonnes)
+                </label>
+            </div>
+            <div class="decision-filters">
+                <span>🏷️ Décision :</span>
+                <label><input type="checkbox" class="decision-filter" value="Keep" checked> Keep</label>
+                <label><input type="checkbox" class="decision-filter" value="Sell" checked> Sell</label>
+                <label><input type="checkbox" class="decision-filter" value="Gem" checked> Gem</label>
+                <label><input type="checkbox" class="decision-filter" value="Upgrade" checked> Upgrade</label>
+                <label><input type="checkbox" class="decision-filter" value="Reapp" checked> Reapp</label>
+                <label><input type="checkbox" class="decision-filter" value="Finish" checked> Finish</label>
+                <button id="selectAllDecisions" class="btn-small">✅ Select All</button>
+                <button id="deselectAllDecisions" class="btn-small">❌ Deselect All</button>
+            </div>
+        </div>
+
+        <div class="stats">
+            <div>📊 Total: <span id="runeCount">0</span> runes</div>
+            <div class="counters">
+                <span class="counter-sell">💀 Sell: <span id="sellCount">0</span></span>
+                <span class="counter-gem">💎 Gem: <span id="gemCount">0</span></span>
+                <span class="counter-keep">✅ Keep: <span id="keepCount">0</span></span>
+                <span class="counter-upgrade">⬆️ Upgrade: <span id="upgradeCount">0</span></span>
+                <span class="counter-reapp">🔄 Reapp: <span id="reappCount">0</span></span>
+                <span class="counter-finish">🏁 Finish: <span id="finishCount">0</span></span>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table id="runeTable">
+                <thead>
+                    <tr>
+                        <th>Slot</th><th>Set</th><th>Rareté</th><th>Niv.</th><th>Principal</th><th>Valeur</th>
+                        <th>Innate</th><th>Substats</th><th>Efficacité %</th><th>Power Lvl</th>
+                        <th>Mode</th><th>Bad Flat</th><th>High Roll</th><th>Duo Roll</th>
+                        <th>Classic DPS</th><th>Slow DPS</th><th>Bomber</th>
+                        <th>Tank & Support</th><th>Bruiser</th><th>Reapp</th><th>Upgrade</th><th>Final</th>
+                    </tr>
+                </thead>
+                <tbody id="runeTableBody"></tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- Modal pour modifier les seuils -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-buttons-fixed">
+                <button id="saveSettingsBtn" class="btn">Sauvegarder</button>
+                <button id="resetSettingsBtn" class="btn">Réinitialiser</button>
+            </div>
+            <div class="modal-tabs">
+                <button id="tabHighRollBtn" class="tab-btn active">High Roll</button>
+                <button id="tabDuoRollBtn" class="tab-btn">Duo Roll</button>
+            </div>
+            <div id="settingsForm" class="settings-form-container"></div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.4.1/papaparse.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
