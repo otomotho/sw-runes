@@ -1040,6 +1040,6 @@ function updateSetFilter() {
 
 function getSetIcon(setName) {
     if (!setName) return '';
-    const fileName = setName.toLowerCase() + '_Rune_Icon.webp';
+    const fileName = setName + '_Rune_Icon.webp';   // conserve la casse d'origine
     return `<img class="set-icon" src="icons/${fileName}" alt="${setName}" style="width:24px; height:24px; margin-right:6px; vertical-align:middle;">`;
 }
