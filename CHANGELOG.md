@@ -3,6 +3,9 @@
 ## [v1.1.6] - 2026-05-17
 ### Correction du bouton de modification des seuils et rajout des fonts de runes intangible et seal
 
+## [v1.1.6] - 2026-05-17
+### Correction du bouton de modification des seuils et rajout des fonts de runes intangible et seal
+
 ## [v1.1.6] - 2026-05-18
 ### Correction
 - Réparation du bouton "Modifier les seuils" (réintégration des fonctions de gestion du modal).

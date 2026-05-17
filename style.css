@@ -370,6 +370,6 @@ th, td {
 .rune-enhance:before { content: "\63"; }
 .rune-accuracy:before { content: "\62"; }
 .rune-tolerance:before { content: "\61"; }
-.rune-seal:before { content: "\60"; }
-.rune-intangible:before { content: "\5f"; }
+.rune-seal:before { content: "\76"; }
+.rune-intangible:before { content: "\76"; }
 /* Ajoute d'autres sets si nécessaire */
